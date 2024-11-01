@@ -23,6 +23,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.io.Serializable;
 
+/**
+ * Expr表示一个表达式，继承了java的序列化接口。
+ */
 public interface Expr extends Serializable {
     /**
      * Evaluate the result of this {@link Expr} in a specified {@link EvalContext} and {@link ExprConfig}.
