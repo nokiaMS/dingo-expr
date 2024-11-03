@@ -23,6 +23,9 @@ import io.dingodb.expr.runtime.op.aggregation.NullaryAgg;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
+/**
+ * 空元聚合表达式。
+ */
 public final class NullaryAggExpr extends NullaryOpExpr implements AggExpr {
     private static final long serialVersionUID = -382480126048094131L;
 

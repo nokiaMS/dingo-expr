@@ -18,17 +18,31 @@ package io.dingodb.expr.runtime;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 行计算上下文实现类。
+ */
 public class TupleEvalContextImpl implements TupleEvalContext {
+    /**
+     * 序列化版本号。
+     */
     private static final long serialVersionUID = -1735756800219588237L;
 
+    /**
+     * 线程的局部变量，每个线程中ThreadLocal变量都是一个独立的副本，各个线程互不影响。
+     */
     private final ThreadLocal<Object[]> threadLocalTuple = new ThreadLocal<>();
 
     /**
+     * 默认构造函数。
      * Create a {@link TupleEvalContextImpl}.
      */
     public TupleEvalContextImpl() {
     }
 
+    /**
+     * tuple的字符串表示。
+     * @return
+     */
     @Override
     public String toString() {
         Object[] tuple = threadLocalTuple.get();
@@ -51,16 +65,30 @@ public class TupleEvalContextImpl implements TupleEvalContext {
         return sb.toString();
     }
 
+    /**
+     * 返回id对应的值。
+     * @param id the id of the variable
+     * @return
+     */
     @Override
     public Object get(Object id) {
         return threadLocalTuple.get()[(int) id];
     }
 
+    /**
+     * 设置id对应的值。
+     * @param id    the id of the variable
+     * @param value the new value of the variable
+     */
     @Override
     public void set(Object id, Object value) {
         threadLocalTuple.get()[(int) id] = value;
     }
 
+    /**
+     * 设置tuple值。
+     * @param tuple
+     */
     @Override
     public void setTuple(Object @NonNull [] tuple) {
         threadLocalTuple.set(tuple);

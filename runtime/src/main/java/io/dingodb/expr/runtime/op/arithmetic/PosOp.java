@@ -23,6 +23,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.math.BigDecimal;
 
+/**
+ * 正号操作。
+ */
 @Operators
 abstract class PosOp extends UnaryNumericOp {
     private static final long serialVersionUID = -6665715127982088591L;

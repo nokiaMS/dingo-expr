@@ -18,6 +18,11 @@ package io.dingodb.expr.runtime.type;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 类型访问者接口，定义了各种类型的访问接口。
+ * @param <R>
+ * @param <T>
+ */
 public interface TypeVisitor<R, T> {
     R visitNullType(@NonNull NullType type, T obj);
 

@@ -18,24 +18,89 @@ package io.dingodb.expr.runtime.expr;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 表达式访问者接口。
+ * @param <R>
+ * @param <T>
+ */
 public interface ExprVisitor<R, T> {
+    /**
+     * 变量访问接口。
+     * @param expr
+     * @param obj
+     * @return
+     */
     R visitVal(@NonNull Val expr, T obj);
 
+    /**
+     * 变量访问接口。
+     * @param expr
+     * @param obj
+     * @return
+     */
     R visitVar(@NonNull Var expr, T obj);
 
+    /**
+     * 空元访问接口。
+     * @param expr
+     * @param obj
+     * @return
+     */
     R visitNullaryOpExpr(@NonNull NullaryOpExpr expr, T obj);
 
+    /**
+     * 一元操作表达式访问接口。
+     * @param expr
+     * @param obj
+     * @return
+     */
     R visitUnaryOpExpr(@NonNull UnaryOpExpr expr, T obj);
 
+    /**
+     * 二元操作表达式访问接口。
+     * @param expr
+     * @param obj
+     * @return
+     */
     R visitBinaryOpExpr(@NonNull BinaryOpExpr expr, T obj);
 
+    /**
+     * tertiary操作表达式访问接口。
+     * @param expr
+     * @param obj
+     * @return
+     */
     R visitTertiaryOpExpr(@NonNull TertiaryOpExpr expr, T obj);
 
+    /**
+     * 可变参数操作表达式访问接口。
+     * @param expr
+     * @param obj
+     * @return
+     */
     R visitVariadicOpExpr(@NonNull VariadicOpExpr expr, T obj);
 
+    /**
+     * 索引操作表达式访问接口。
+     * @param expr
+     * @param obj
+     * @return
+     */
     R visitIndexOpExpr(@NonNull IndexOpExpr expr, T obj);
 
+    /**
+     * 空元聚合操作表达式访问接口。
+     * @param expr
+     * @param obj
+     * @return
+     */
     R visitNullaryAggExpr(@NonNull NullaryAggExpr expr, T obj);
 
+    /**
+     * 一元聚合表达式访问接口。
+     * @param expr
+     * @param obj
+     * @return
+     */
     R visitUnaryAggExpr(@NonNull UnaryAggExpr expr, T obj);
 }

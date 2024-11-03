@@ -54,10 +54,14 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.io.IOException;
 import java.io.OutputStream;
 
+/**
+ * 表达式编码器。
+ */
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class ExprCoder extends ExprVisitorBase<CodingFlag, @NonNull OutputStream> {
     public static final ExprCoder INSTANCE = new ExprCoder();
 
+    //VAR对象编码。
     private static final byte VAR = (byte) 0x30;
     private static final byte VAR_S = (byte) 0x40;
 
@@ -139,6 +143,13 @@ public class ExprCoder extends ExprVisitorBase<CodingFlag, @NonNull OutputStream
         return new ValCoder(expr).visit(expr.getType(), obj);
     }
 
+    /**
+     * 对变量进行编码。
+     * 编码格式：byte1<xxxx:var标识(0x30), xxxx:变量类型编码>
+     * @param expr
+     * @param obj
+     * @return
+     */
     @SneakyThrows
     @Override
     public CodingFlag visitVar(@NonNull Var expr, OutputStream obj) {

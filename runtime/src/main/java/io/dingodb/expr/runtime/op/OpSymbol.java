@@ -16,25 +16,31 @@
 
 package io.dingodb.expr.runtime.op;
 
+/**
+ * 操作符。
+ */
 public final class OpSymbol {
-    public static final String ARRAY = "[]";
-    public static final String FUN = "()";
-    public static final String POS = "+";
-    public static final String NEG = "-";
-    public static final String ADD = " + ";
-    public static final String SUB = " - ";
-    public static final String MUL = "*";
-    public static final String DIV = "/";
-    public static final String LT = " < ";
-    public static final String LE = " <= ";
-    public static final String EQ = " == ";
-    public static final String GT = " > ";
-    public static final String GE = " >= ";
-    public static final String NE = " != ";
-    public static final String NOT = "!";
-    public static final String AND = " && ";
-    public static final String OR = " || ";
+    public static final String ARRAY = "[]";    //数组操作符。
+    public static final String FUN = "()";      //函数操作符。
+    public static final String POS = "+";       //正数操作符。
+    public static final String NEG = "-";       //负数操作符。
+    public static final String ADD = " + ";     //加法操作符。
+    public static final String SUB = " - ";     //减法操作符。
+    public static final String MUL = "*";       //乘法操作符。
+    public static final String DIV = "/";       //除法操作符。
+    public static final String LT = " < ";      //小于。
+    public static final String LE = " <= ";     //小于等于。
+    public static final String EQ = " == ";     //等于
+    public static final String GT = " > ";      //大于
+    public static final String GE = " >= ";     //大于等于
+    public static final String NE = " != ";     //不等于
+    public static final String NOT = "!";       //逻辑非
+    public static final String AND = " && ";    //逻辑与
+    public static final String OR = " || ";     //逻辑或
 
+    /**
+     * 默认构造函数为私有，表示这个类不能创建实例对象。
+     */
     private OpSymbol() {
     }
 }

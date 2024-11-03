@@ -19,6 +19,9 @@ package io.dingodb.expr.runtime.type;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * 标量类型。
+ */
 @RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 abstract class ScalarType implements Type {
     @Override

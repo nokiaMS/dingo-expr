@@ -44,10 +44,22 @@ import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 数组构建器，定义了各种类型的数组对象。
+ */
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public final class ArrayBuilder extends TypeVisitorBase<Object, @NonNull Integer> {
+    /**
+     * 默认实例。
+     */
     public static final ArrayBuilder INSTANCE = new ArrayBuilder();
 
+    /**
+     * 给定
+     * @param type
+     * @param obj
+     * @return
+     */
     @Override
     public @NonNull Object visitIntType(@NonNull IntType type, @NonNull Integer obj) {
         return new int[obj];

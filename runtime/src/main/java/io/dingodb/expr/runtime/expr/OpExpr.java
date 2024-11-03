@@ -22,6 +22,11 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 操作表达式。
+ * @param <O>
+ * @param <E>
+ */
 @EqualsAndHashCode(of = {"op"})
 public abstract class OpExpr<O extends AbstractOp<O, E>, E extends OpExpr<O, E>> implements Expr {
     private static final long serialVersionUID = -9011805373573763769L;
@@ -29,6 +34,10 @@ public abstract class OpExpr<O extends AbstractOp<O, E>, E extends OpExpr<O, E>>
     @Getter
     protected final O op;
 
+    /**
+     * 构造函数。
+     * @param op
+     */
     protected OpExpr(O op) {
         this.op = op;
     }

@@ -19,6 +19,9 @@ package io.dingodb.expr.runtime.type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
+/**
+ * null类型。
+ */
 public class NullType extends ScalarType {
     public static final String NAME = "NULL";
 

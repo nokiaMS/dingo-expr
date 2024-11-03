@@ -22,6 +22,9 @@ import io.dingodb.expr.runtime.exception.EvalNotImplemented;
 import io.dingodb.expr.runtime.expr.NullaryOpExpr;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 空元操作。
+ */
 public abstract class NullaryOp extends AbstractOp<NullaryOp, NullaryOpExpr> {
     private static final long serialVersionUID = -5008875403399768833L;
 

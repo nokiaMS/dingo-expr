@@ -19,6 +19,9 @@ package io.dingodb.expr.runtime.op.aggregation;
 import io.dingodb.expr.runtime.ExprConfig;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 聚合操作接口。
+ */
 public interface Agg {
     /**
      * Merge two aggregating context.

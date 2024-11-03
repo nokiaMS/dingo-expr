@@ -20,6 +20,9 @@ import io.dingodb.expr.runtime.expr.Exprs;
 import io.dingodb.expr.runtime.op.BinaryOp;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * max聚合操作。
+ */
 public final class MaxAgg extends HostedUnaryAgg {
     public static final String NAME = "MAX";
 

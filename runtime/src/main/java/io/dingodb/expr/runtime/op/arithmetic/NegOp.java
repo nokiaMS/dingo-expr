@@ -23,6 +23,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.math.BigDecimal;
 
+/**
+ * 负号操作。
+ */
 @Operators
 abstract class NegOp extends UnaryNumericOp {
     private static final long serialVersionUID = -8440534198682078139L;

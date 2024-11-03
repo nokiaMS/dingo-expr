@@ -24,6 +24,11 @@ import io.dingodb.expr.runtime.type.Type;
 import io.dingodb.expr.runtime.type.Types;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 操作的抽象接口。
+ * @param <O>
+ * @param <E>
+ */
 public abstract class AbstractOp<O extends AbstractOp<O, E>, E extends OpExpr<O, E>> implements Op, OpFactory<O> {
     private static final long serialVersionUID = -2046211912438996616L;
 

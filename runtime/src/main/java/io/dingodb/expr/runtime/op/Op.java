@@ -21,6 +21,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.io.Serializable;
 
+/**
+ * 操作基类。
+ */
 public interface Op extends Serializable {
     /**
      * Get the {@link Type} of result.

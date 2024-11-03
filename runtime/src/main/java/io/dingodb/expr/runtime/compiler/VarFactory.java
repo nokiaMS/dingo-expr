@@ -23,7 +23,13 @@ import io.dingodb.expr.runtime.expr.Exprs;
 import io.dingodb.expr.runtime.expr.Var;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 变量工厂，创建指定类型的变量。
+ */
 public final class VarFactory {
+    /**
+     * 默认构造函数。
+     */
     private VarFactory() {
     }
 
@@ -38,7 +44,13 @@ public final class VarFactory {
         throw new ElementNotExist(id, context);
     }
 
+    /**
+     * 变量创建接口。
+     * @param context
+     * @return
+     */
     static @NonNull Expr createVar(@NonNull CompileContext context) {
+        //获得
         Object id = context.getId();
         if (id != null) {
             return Exprs.var(id, context.getType());

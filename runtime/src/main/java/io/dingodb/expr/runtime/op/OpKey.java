@@ -18,5 +18,8 @@ package io.dingodb.expr.runtime.op;
 
 import java.io.Serializable;
 
+/**
+ * 类型的基类。
+ */
 public interface OpKey extends Serializable {
 }

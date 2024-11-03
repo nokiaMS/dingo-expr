@@ -18,6 +18,9 @@ package io.dingodb.expr.runtime.type;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * list类型。
+ */
 public final class ListType extends CollectionType {
     public static final String NAME = "LIST";
 

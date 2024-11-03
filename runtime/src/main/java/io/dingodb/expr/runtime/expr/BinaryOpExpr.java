@@ -26,6 +26,9 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 二元操作表达式。
+ */
 @EqualsAndHashCode(of = {"operand0", "operand1"}, callSuper = true)
 public class BinaryOpExpr extends OpExpr<BinaryOp, BinaryOpExpr> {
     private static final long serialVersionUID = -4980001325586095328L;

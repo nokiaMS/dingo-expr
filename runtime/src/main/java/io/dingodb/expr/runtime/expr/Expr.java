@@ -25,9 +25,11 @@ import java.io.Serializable;
 
 /**
  * Expr表示一个表达式，继承了java的序列化接口。
+ * 是所有表达式的基类。
  */
 public interface Expr extends Serializable {
     /**
+     * 计算表达式。
      * Evaluate the result of this {@link Expr} in a specified {@link EvalContext} and {@link ExprConfig}.
      *
      * @param context the specified {@link EvalContext}, containing variables
@@ -36,14 +38,30 @@ public interface Expr extends Serializable {
      */
     Object eval(EvalContext context, ExprConfig config);
 
+    /**
+     * 计算表达式并返回结果。
+     * @return
+     */
     default Object eval() {
         return eval(null, ExprConfig.SIMPLE);
     }
 
+    /**
+     * 获得表达式类型。
+     * @return
+     */
     Type getType();
 
     @NonNull Expr simplify(ExprConfig config);
 
+    /**
+     * 调用visitor的visit方法。
+     * @param visitor
+     * @param obj
+     * @return
+     * @param <R>
+     * @param <T>
+     */
     <R, T> R accept(@NonNull ExprVisitor<R, T> visitor, T obj);
 
     @NonNull String toDebugString();

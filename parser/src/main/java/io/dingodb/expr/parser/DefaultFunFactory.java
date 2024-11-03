@@ -117,6 +117,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * 函数工厂实现类。
+ */
 public class DefaultFunFactory implements FunFactory {
     protected final Map<String, NullaryOp> nullaryFunMap;
     protected final Map<String, UnaryOp> unaryFunMap;
@@ -124,6 +127,10 @@ public class DefaultFunFactory implements FunFactory {
     protected final Map<String, TertiaryOp> tertiaryFunMap;
     protected final Map<String, VariadicOp> variadicFunMap;
 
+    /**
+     * 构造函数。
+     * @param config    配置对象。
+     */
     public DefaultFunFactory(@NonNull ExprConfig config) {
         nullaryFunMap = new TreeMap<>(String::compareToIgnoreCase);
         unaryFunMap = new TreeMap<>(String::compareToIgnoreCase);
@@ -131,7 +138,7 @@ public class DefaultFunFactory implements FunFactory {
         tertiaryFunMap = new TreeMap<>(String::compareToIgnoreCase);
         variadicFunMap = new TreeMap<>(String::compareToIgnoreCase);
 
-        // Castings
+        // Castings 注册类型转换函数。
         registerUnaryFun(IntType.NAME, config.withRangeCheck() ? Exprs.TO_INT_C : Exprs.TO_INT);
         registerUnaryFun(LongType.NAME, config.withRangeCheck() ? Exprs.TO_LONG_C : Exprs.TO_LONG);
         registerUnaryFun(FloatType.NAME, Exprs.TO_FLOAT);

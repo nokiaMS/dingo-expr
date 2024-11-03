@@ -18,6 +18,9 @@ package io.dingodb.expr.runtime.type;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * timestamp类型。
+ */
 public final class TimestampType extends ScalarType {
     public static final String NAME = "TIMESTAMP";
 

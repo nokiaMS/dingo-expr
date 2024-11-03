@@ -26,6 +26,9 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 
 import java.sql.Date;
 
+/**
+ * date转换操作。
+ */
 @Operators
 abstract class DateCastOp extends CastOp {
     private static final long serialVersionUID = -5795485462775179517L;

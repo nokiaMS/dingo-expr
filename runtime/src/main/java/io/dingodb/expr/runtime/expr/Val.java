@@ -43,41 +43,80 @@ import java.sql.Timestamp;
 
 import static io.dingodb.expr.runtime.utils.DateTimeUtils.toSecond;
 
+/**
+ * 表示一个值（值也是一个表达式。）。
+ */
 @Getter
 @EqualsAndHashCode(of = {"value", "type"})
 public final class Val implements Expr {
+    //值常量。
+    //null型空值。
     public static final Val NULL = new Val(null, Types.NULL);
+    //int空值。
     public static final Val NULL_INT = new Val(null, Types.INT);
+    //long空值。
     public static final Val NULL_LONG = new Val(null, Types.LONG);
+    //float空值。
     public static final Val NULL_FLOAT = new Val(null, Types.FLOAT);
+    //double空值。
     public static final Val NULL_DOUBLE = new Val(null, Types.DOUBLE);
+    //bool空值。
     public static final Val NULL_BOOL = new Val(null, Types.BOOL);
+    //decimal空值。
     public static final Val NULL_DECIMAL = new Val(null, Types.DECIMAL);
+    //string空值。
     public static final Val NULL_STRING = new Val(null, Types.STRING);
+    //bytes空值。
     public static final Val NULL_BYTES = new Val(null, Types.BYTES);
+    //date空值。
     public static final Val NULL_DATE = new Val(null, Types.DATE);
+    //time空值。
     public static final Val NULL_TIME = new Val(null, Types.TIME);
+    //timestamp空值。
     public static final Val NULL_TIMESTAMP = new Val(null, Types.TIMESTAMP);
+    //any空值。
     public static final Val NULL_ANY = new Val(null, Types.ANY);
 
+    //Tau数字是一种数学常数，用希腊字母τ表示，其值约等于6.28318530718。
     public static final Val TAU = new Val(6.283185307179586476925, Types.DOUBLE);
+    //E常量。
     public static final Val E = new Val(2.7182818284590452354, Types.DOUBLE);
 
+    //true常量。
     public static final Val TRUE = new Val(true, Types.BOOL);
+    //false常量。
     public static final Val FALSE = new Val(false, Types.BOOL);
 
+    //Val的对象版本号。
     private static final long serialVersionUID = -5457707032677852803L;
 
+    /**
+     * 值对象的值。
+     */
     @Getter
     private final Object value;
+
+    /**
+     * 值对象的类型。
+     */
     @Getter
     private final Type type;
 
+    /**
+     *  Val的构造函数，一个值类型由值和他的类型两个属性组成。
+     * @param value
+     * @param type
+     */
     Val(Object value, Type type) {
         this.value = value;
         this.type = type;
     }
 
+    /**
+     * 字面量转为整型Val对象，根据值的范围可能转为int,long或者decimal。
+     * @param text
+     * @return
+     */
     public static @NonNull Val parseLiteralInt(String text) {
         try {
             return new Val(Integer.parseInt(text), Types.INT);
@@ -90,10 +129,20 @@ public final class Val implements Expr {
         }
     }
 
+    /**
+     * 字面量转换为real类型（real实际就是decimal类型）。
+     * @param text
+     * @return
+     */
     public static @NonNull Val parseLiteralReal(String text) {
         return new Val(new BigDecimal(text), Types.DECIMAL);
     }
 
+    /**
+     * 字面量转为string类型。
+     * @param text
+     * @return
+     */
     public static @NonNull Val parseLiteralString(@NonNull String text) {
         return new Val(StringEscapeUtils.unescapeJson(text.substring(1, text.length() - 1)), Types.STRING);
     }
@@ -102,6 +151,12 @@ public final class Val implements Expr {
         return funName + "(" + valueStr + ")";
     }
 
+    /**
+     * 计算Val的值（Val是表达式的叶子节点，计算方式是直接返回Val的value字段。）
+     * @param context the specified {@link EvalContext}, containing variables
+     * @param config  the specified {@link ExprConfig}, containing eval config, like time zone.
+     * @return
+     */
     @Override
     public Object eval(EvalContext context, ExprConfig config) {
         return value;
@@ -112,22 +167,43 @@ public final class Val implements Expr {
         return this;
     }
 
+    /**
+     * 调用访问者的visitVal函数。
+     * @param visitor
+     * @param obj
+     * @return
+     * @param <R>
+     * @param <T>
+     */
     @Override
     public <R, T> R accept(@NonNull ExprVisitor<R, T> visitor, T obj) {
         return visitor.visitVal(this, obj);
     }
 
+    /**
+     * 调试阶段显示类信息字符串。
+     * @return
+     */
     @Override
     public @NonNull String toDebugString() {
         return getClass().getSimpleName() + "[" + getValue() + ", " + type + "]";
     }
 
+    /**
+     * 转为字符串。
+     * @return
+     */
     @Override
     public String toString() {
         Expr expr = ExprCompiler.SIMPLE.visit(this);
         return smartToString(expr.eval());
     }
 
+    /**
+     * 更智能的字符串转换方式。
+     * @param obj
+     * @return
+     */
     private String smartToString(Object obj) {
         if (obj == null) {
             return type.equals(Types.NULL) ? NullType.NAME : wrapByFun(type.toString(), NullType.NAME);

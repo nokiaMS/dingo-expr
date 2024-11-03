@@ -27,6 +27,9 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
+/**
+ * timestamp转换操作。
+ */
 @Operators
 abstract class TimestampCastOp extends CastOp {
     private static final long serialVersionUID = -2472358326023215685L;

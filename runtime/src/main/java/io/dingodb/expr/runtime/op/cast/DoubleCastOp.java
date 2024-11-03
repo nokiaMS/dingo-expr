@@ -24,6 +24,9 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 
 import java.math.BigDecimal;
 
+/**
+ * double转换操作。
+ */
 @Operators
 abstract class DoubleCastOp extends CastOp {
     private static final long serialVersionUID = -1395304729108735038L;

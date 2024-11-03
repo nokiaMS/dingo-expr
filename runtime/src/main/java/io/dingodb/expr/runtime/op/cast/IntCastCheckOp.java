@@ -27,6 +27,9 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * 带有溢出检查的int转换操作。
+ */
 @Operators
 abstract class IntCastCheckOp extends CastOp {
     private static final long serialVersionUID = 2998309220568085549L;

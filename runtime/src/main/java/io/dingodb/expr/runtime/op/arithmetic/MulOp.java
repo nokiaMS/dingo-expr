@@ -23,6 +23,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.math.BigDecimal;
 
+/**
+ * 乘法操作。
+ */
 @Operators
 abstract class MulOp extends BinaryNumericOp {
     private static final long serialVersionUID = 4677892788590745542L;

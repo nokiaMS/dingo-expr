@@ -18,11 +18,14 @@ package io.dingodb.expr.runtime.op;
 
 import lombok.Getter;
 
+/**
+ * 操作类型。
+ */
 public enum OpType {
     INDEX(OpSymbol.ARRAY, 0),
     FUN(OpSymbol.FUN, 0),
     AGG(OpSymbol.FUN, 0),
-    CAST(OpSymbol.FUN, 0),
+    CAST(OpSymbol.FUN, 0),      //类型转换操作。
     POS(OpSymbol.POS, 1),
     NEG(OpSymbol.NEG, 1),
     ADD(OpSymbol.ADD, 3),

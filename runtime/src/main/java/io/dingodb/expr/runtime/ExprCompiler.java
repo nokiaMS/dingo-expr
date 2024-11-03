@@ -42,6 +42,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.Arrays;
 
+/**
+ * 表达式编译器。
+ */
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class ExprCompiler extends ExprVisitorBase<Expr, CompileContext> {
     public static final ExprCompiler SIMPLE = new ExprCompiler(ExprConfig.SIMPLE);

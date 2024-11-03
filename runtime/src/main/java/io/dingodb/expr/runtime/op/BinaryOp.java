@@ -27,6 +27,9 @@ import io.dingodb.expr.runtime.type.Type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
+/**
+ * 二元操作。
+ */
 public abstract class BinaryOp extends AbstractOp<BinaryOp, BinaryOpExpr> {
     private static final long serialVersionUID = -3432586934529603722L;
 

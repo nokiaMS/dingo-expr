@@ -24,6 +24,9 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 
 import java.nio.charset.StandardCharsets;
 
+/**
+ * bytes数组转换操作。
+ */
 @Operators
 abstract class BytesCastOp extends CastOp {
     private static final long serialVersionUID = -5563522687431694359L;

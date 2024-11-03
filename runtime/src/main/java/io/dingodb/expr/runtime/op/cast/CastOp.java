@@ -20,14 +20,25 @@ import io.dingodb.expr.runtime.op.OpType;
 import io.dingodb.expr.runtime.op.UnaryOp;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 类型转换操作接口。
+ */
 public abstract class CastOp extends UnaryOp {
     private static final long serialVersionUID = -7770311788157283602L;
 
+    /**
+     * 获得转换类型。
+     * @return
+     */
     @Override
     public final @NonNull OpType getOpType() {
         return OpType.CAST;
     }
 
+    /**
+     * 获得转换名称。
+     * @return
+     */
     @Override
     public final @NonNull String getName() {
         return getType().toString();

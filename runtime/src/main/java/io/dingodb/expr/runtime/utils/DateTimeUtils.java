@@ -50,6 +50,9 @@ import static java.time.temporal.ChronoField.MONTH_OF_YEAR;
 import static java.time.temporal.ChronoField.SECOND_OF_MINUTE;
 import static java.time.temporal.ChronoField.YEAR;
 
+/**
+ * 事件日期工具类。
+ */
 public final class DateTimeUtils {
     public static final DateTimeFormatter DATE_SEP_BY_HYPHEN = dateFormatterWithSeparator('-');
     public static final DateTimeFormatter DATE_SEP_BY_SLASH = dateFormatterWithSeparator('/');

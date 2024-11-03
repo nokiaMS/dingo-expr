@@ -27,15 +27,31 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.Objects;
 
+/**
+ * 表示一个变量。
+ */
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 @EqualsAndHashCode(of = {"id", "type"})
 public class Var implements Expr {
+    /**
+     * 用于Var变量的字符串表示中，Var的字符串表示以一个$开头。
+     */
     public static final String WHOLE_VAR = "$";
 
+    /**
+     * 类版本号。
+     */
     private static final long serialVersionUID = -7434384449038456900L;
 
+    /**
+     * 变量的id。
+     */
     @Getter
     private final Object id;
+
+    /**
+     * 变量类型。
+     */
     @Getter
     private final Type type;
 
@@ -49,17 +65,30 @@ public class Var implements Expr {
         return this;
     }
 
+    /**
+     * 调用访问者的visitVar函数。
+     * @param visitor
+     * @param obj
+     * @return
+     * @param <R>
+     * @param <T>
+     */
     @Override
     public <R, T> R accept(@NonNull ExprVisitor<R, T> visitor, T obj) {
         return visitor.visitVar(this, obj);
     }
 
+    /**
+     * 返回对象的字符串表示。
+     * @return
+     */
     @Override
     public @NonNull String toDebugString() {
         return getClass().getSimpleName() + "[" + getId() + ", " + type + "]";
     }
 
     /**
+     * 设置变量值。
      * Set the value of this variable in a specified EvalContext.
      *
      * @param context the EvalContext
@@ -70,6 +99,10 @@ public class Var implements Expr {
         Objects.requireNonNull(context).set(id, value);
     }
 
+    /**
+     * 返回对象的字符串表示。
+     * @return
+     */
     @Override
     public String toString() {
         if (id instanceof Integer || id instanceof Long) {

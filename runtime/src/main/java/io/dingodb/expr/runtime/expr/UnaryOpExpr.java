@@ -26,6 +26,9 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 一元操作表达式。
+ */
 @EqualsAndHashCode(of = {"operand"}, callSuper = true)
 public class UnaryOpExpr extends OpExpr<UnaryOp, UnaryOpExpr> {
     private static final long serialVersionUID = 7964987353969166202L;
@@ -56,6 +59,14 @@ public class UnaryOpExpr extends OpExpr<UnaryOp, UnaryOpExpr> {
         return op.simplify(this, config);
     }
 
+    /**
+     * 调用visitor的visitUnaryOpExpr以处理二元操作表达式。
+     * @param visitor
+     * @param obj
+     * @return
+     * @param <R>
+     * @param <T>
+     */
     @Override
     public <R, T> R accept(@NonNull ExprVisitor<R, T> visitor, T obj) {
         return visitor.visitUnaryOpExpr(this, obj);

@@ -25,42 +25,87 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * 类型转换操作。
+ */
 @Operators
 abstract class IntCastOp extends CastOp {
     private static final long serialVersionUID = 6934382536298574928L;
 
+    /**
+     * int转int.
+     */
     static int intCast(int value) {
         return value;
     }
 
+    /**
+     * long转int。
+     * @param value
+     * @return
+     */
     static int intCast(long value) {
         return (int) value;
     }
 
+    /**
+     * float转int.
+     * @param value
+     * @return
+     */
     static int intCast(float value) {
         return Math.round(value);
     }
 
+    /**
+     * double转int。
+     * @param value
+     * @return
+     */
     static int intCast(double value) {
         return (int) Math.round(value);
     }
 
+    /**
+     * boolean转int。
+     * @param value
+     * @return
+     */
     static int intCast(boolean value) {
         return value ? 1 : 0;
     }
 
+    /**
+     * bigDecimal转int。
+     * @param value
+     * @return
+     */
     static int intCast(@NonNull BigDecimal value) {
         return value.setScale(0, RoundingMode.HALF_UP).intValue();
     }
 
+    /**
+     * string转int。
+     * @param value
+     * @return
+     */
     static int intCast(@NonNull String value) {
         return Integer.parseInt(value);
     }
 
+    /**
+     * void转int。
+     * @param ignoredValue
+     * @return
+     */
     static @Nullable Integer intCast(Void ignoredValue) {
         return null;
     }
 
+    /**
+     * 获得转换的类型。
+     * @return
+     */
     @Override
     public final Type getType() {
         return Types.INT;

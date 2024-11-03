@@ -21,6 +21,9 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * map类型。
+ */
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public final class MapType implements Type {
     public static final String NAME = "MAP";

@@ -21,6 +21,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.io.Serializable;
 
+/**
+ * 关系操作。
+ */
 public interface RelOp extends Serializable {
     /**
      * Return a new {@link RelOp} with expression compiled, and cache initialized (for {@link CacheOp}).

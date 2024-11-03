@@ -35,17 +35,36 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 import java.io.OutputStream;
 import java.util.List;
 
+/**
+ * 表操作编码器。
+ */
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class RelOpCoder extends RelOpVisitorBase<CodingFlag, @NonNull OutputStream> {
+    /**
+     * 默认实例。
+     */
     public static final RelOpCoder INSTANCE = new RelOpCoder();
 
+    /**
+     * 关联的表达式编码器。
+     */
     private static final ExprCoder EXPR_CODER = ExprCoder.INSTANCE;
 
+    /**
+     * 定义了几种表操作的编码：
+     *      filter：过滤；
+     *      project：投影；
+     *      grouped_aggregate：分组聚合；
+     *      ungrouped_aggregate：非分组聚合；
+     */
     private static final byte FILTER = (byte) 0x71;
-    private static final byte PROJECT = (byte) 0x72;
+    private static final byte PROJECT = (byte) 0x72;        //定义了投影操作的编码。
     private static final byte GROUPED_AGGREGATE = (byte) 0x73;
     private static final byte UNGROUPED_AGGREGATE = (byte) 0x74;
 
+    /**
+     * 表达式结束标志。
+     */
     // End of expression
     private static final byte EOE = (byte) 0x00;
 
@@ -76,16 +95,27 @@ public class RelOpCoder extends RelOpVisitorBase<CodingFlag, @NonNull OutputStre
         return null;
     }
 
+    /**
+     * 投影操作的编码函数。（投影：从表的查询结果中选择相应的列。）
+     * 格式： byte1(操作编码:0x72) + ... + EOE
+     * @param op
+     * @param obj
+     * @return  编码成功返回OK，否则返回null。
+     */
     @SneakyThrows
     @Override
     public CodingFlag visitProjectOp(@NonNull ProjectOp op, @NonNull OutputStream obj) {
+        //写入投影操作编码。
         obj.write(PROJECT);
+        //对投影列逐一进行编码。
         for (Expr expr : op.getProjects()) {
             if (EXPR_CODER.visit(expr, obj) != CodingFlag.OK) {
                 return null;
             }
         }
+        //添加编码结束标记。
         obj.write(EOE);
+        //返回编码成功。
         return CodingFlag.OK;
     }
 

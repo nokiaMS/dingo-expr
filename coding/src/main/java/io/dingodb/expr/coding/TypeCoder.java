@@ -28,8 +28,15 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 类型编码器，返回对应类型的编码值。
+ */
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 class TypeCoder extends TypeVisitorBase<Byte, Void> {
+
+    /**
+     * 定义了各种类型的编码值。
+     */
     public static final byte TYPE_INT32 = (byte) 0x01;
     public static final byte TYPE_INT64 = (byte) 0x02;
     public static final byte TYPE_BOOL = (byte) 0x03;
@@ -39,37 +46,79 @@ class TypeCoder extends TypeVisitorBase<Byte, Void> {
     public static final byte TYPE_STRING = (byte) 0x07;
     static final TypeCoder INSTANCE = new TypeCoder();
 
+    /**
+     * int类型编码器。
+     * @param type
+     * @param obj
+     * @return  返回int类型的编码值。
+     */
     @Override
     public Byte visitIntType(@NonNull IntType type, Void obj) {
         return TYPE_INT32;
     }
 
+    /**
+     * 返回long类型的编码值。
+     * @param type
+     * @param obj
+     * @return
+     */
     @Override
     public Byte visitLongType(@NonNull LongType type, Void obj) {
         return TYPE_INT64;
     }
 
+    /**
+     * float类型编码器。
+     * @param type
+     * @param obj
+     * @return
+     */
     @Override
     public Byte visitFloatType(@NonNull FloatType type, Void obj) {
         return TYPE_FLOAT;
     }
 
+    /**
+     * double类型编码器。
+     * @param type
+     * @param obj
+     * @return
+     */
     @Override
     public Byte visitDoubleType(@NonNull DoubleType type, Void obj) {
         return TYPE_DOUBLE;
     }
 
+    /**
+     * bool类型编码器。
+     * @param type
+     * @param obj
+     * @return
+     */
     @Override
     public Byte visitBoolType(@NonNull BoolType type, Void obj) {
         return TYPE_BOOL;
     }
 
+    /**
+     * decimal类型编码器。
+     * @param type
+     * @param obj
+     * @return
+     */
     @Override
     public Byte visitDecimalType(@NonNull DecimalType type, Void obj) {
         // TODO: Decimal is not supported in libexpr.
         return null;
     }
 
+    /**
+     * string类型编码器。
+     * @param type
+     * @param obj
+     * @return
+     */
     @Override
     public Byte visitStringType(@NonNull StringType type, Void obj) {
         return TYPE_STRING;

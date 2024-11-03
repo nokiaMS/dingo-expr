@@ -27,6 +27,9 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * 带有异常的long转换操作。
+ */
 @Operators
 abstract class LongCastCheckOp extends CastOp {
     private static final long serialVersionUID = -4999428444641603223L;

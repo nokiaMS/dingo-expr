@@ -16,9 +16,18 @@
 
 package io.dingodb.expr.coding;
 
+/**
+ * 编码标记。
+ */
 public final class CodingFlag {
+    /**
+     * 表示编码成功。
+     */
     public static final CodingFlag OK = new CodingFlag();
 
+    /**
+     * 默认构造函数。
+     */
     private CodingFlag() {
     }
 }

@@ -24,6 +24,9 @@ import io.dingodb.expr.runtime.op.OpType;
 import io.dingodb.expr.runtime.type.Type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 空元操作表达式。
+ */
 public class NullaryOpExpr extends OpExpr<NullaryOp, NullaryOpExpr> {
     private static final long serialVersionUID = 3647341413168339783L;
 

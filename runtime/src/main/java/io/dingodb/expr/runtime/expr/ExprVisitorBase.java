@@ -18,7 +18,17 @@ package io.dingodb.expr.runtime.expr;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 表达式访问者基类。
+ * @param <R>
+ * @param <T>
+ */
 public abstract class ExprVisitorBase<R, T> implements ExprVisitor<R, T> {
+    /**
+     * 表达式的visit函数
+     * @param expr  表达式对象。
+     * @return
+     */
     public R visit(@NonNull Expr expr) {
         return expr.accept(this, null);
     }

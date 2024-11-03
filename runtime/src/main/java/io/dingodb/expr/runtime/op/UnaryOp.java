@@ -26,6 +26,9 @@ import io.dingodb.expr.runtime.expr.Val;
 import io.dingodb.expr.runtime.type.Type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 一元操作。
+ */
 public abstract class UnaryOp extends AbstractOp<UnaryOp, UnaryOpExpr> {
     private static final long serialVersionUID = 4820294023360498270L;
 

@@ -35,6 +35,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.Arrays;
 
+/**
+ * 映射操作。
+ */
 @Slf4j
 @EqualsAndHashCode(callSuper = true, of = {"projects"})
 public final class ProjectOp extends AbstractRelOp implements PipeOp {

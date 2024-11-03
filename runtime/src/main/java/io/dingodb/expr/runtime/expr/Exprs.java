@@ -155,8 +155,11 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.Arrays;
 
+/**
+ * 集合了各种操作的实例对象。
+ */
 public final class Exprs {
-    // Castings
+    // Castings，类型转换函数。
     public static final IntCastOpFactory TO_INT = IntCastOpFactory.INSTANCE;
     public static final IntCastCheckOpFactory TO_INT_C = IntCastCheckOpFactory.INSTANCE;
     public static final LongCastOpFactory TO_LONG = LongCastOpFactory.INSTANCE;

@@ -21,6 +21,11 @@ import io.dingodb.expr.rel.op.GroupedAggregateOp;
 import io.dingodb.expr.rel.op.ProjectOp;
 import io.dingodb.expr.rel.op.UngroupedAggregateOp;
 
+/**
+ * 表操作访问函数。
+ * @param <R>
+ * @param <T>
+ */
 public interface RelOpVisitor<R, T> {
     R visitSourceOp(SourceOp op, T obj);
 

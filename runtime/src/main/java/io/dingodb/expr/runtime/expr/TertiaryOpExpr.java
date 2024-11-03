@@ -26,6 +26,9 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 扩展了OpExpr.
+ */
 @EqualsAndHashCode(of = {"operand0", "operand1", "operand2"}, callSuper = true)
 public final class TertiaryOpExpr extends OpExpr<TertiaryOp, TertiaryOpExpr> {
     private static final long serialVersionUID = -1597326280376061590L;

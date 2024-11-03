@@ -25,6 +25,9 @@ import lombok.RequiredArgsConstructor;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
+/**
+ * count聚合操作。
+ */
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public final class CountAgg extends UnaryAgg {
     public static final String NAME = "COUNT";

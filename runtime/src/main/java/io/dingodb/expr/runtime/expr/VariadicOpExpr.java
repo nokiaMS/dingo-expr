@@ -29,6 +29,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+/**
+ * 参数可变操作表达式。
+ */
 @EqualsAndHashCode(of = {"operands"}, callSuper = true)
 public final class VariadicOpExpr extends OpExpr<VariadicOp, VariadicOpExpr> {
     private static final long serialVersionUID = -2145574267641248415L;

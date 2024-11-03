@@ -18,6 +18,9 @@ package io.dingodb.expr.runtime.type;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+/**
+ * 数组类型。
+ */
 public final class ArrayType extends CollectionType {
     public static final String NAME = "ARRAY";
 

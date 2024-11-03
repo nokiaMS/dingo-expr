@@ -25,6 +25,9 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * 除法操作。
+ */
 @Operators
 abstract class DivOp extends BinaryNumericOp {
     private static final long serialVersionUID = 5716662239372671267L;

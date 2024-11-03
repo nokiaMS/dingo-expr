@@ -18,6 +18,9 @@ package io.dingodb.expr.runtime;
 
 import io.dingodb.expr.runtime.type.Type;
 
+/**
+ * 编译上下文。
+ */
 public interface CompileContext {
     /**
      * Get the variable id of this context if it stands for a variable, or {@code null}.

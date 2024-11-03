@@ -23,6 +23,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.math.BigDecimal;
 
+/**
+ * 减法操作。
+ */
 @Operators
 abstract class SubOp extends BinaryNumericOp {
     private static final long serialVersionUID = 3767909097007274581L;

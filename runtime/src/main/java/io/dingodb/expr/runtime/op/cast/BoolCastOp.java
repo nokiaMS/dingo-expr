@@ -24,6 +24,9 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 
 import java.math.BigDecimal;
 
+/**
+ * bool类型转换操作。
+ */
 @Operators
 abstract class BoolCastOp extends CastOp {
     private static final long serialVersionUID = 2195457099624343481L;

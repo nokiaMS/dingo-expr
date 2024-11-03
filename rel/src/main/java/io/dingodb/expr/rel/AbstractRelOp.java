@@ -21,6 +21,9 @@ import io.dingodb.expr.runtime.TupleEvalContext;
 import io.dingodb.expr.runtime.type.TupleType;
 import lombok.EqualsAndHashCode;
 
+/**
+ * 抽象关系操作。
+ */
 @EqualsAndHashCode(callSuper = true)
 public abstract class AbstractRelOp extends TypedRelOp {
     private static final long serialVersionUID = -7066415039209226040L;
