@@ -20,7 +20,7 @@ import io.dingodb.expr.runtime.op.OpKey;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * 各种数据类型的基类。
+ * 各种数据类型的基类.
  */
 public interface Type extends OpKey {
     int NOT_NUMERIC = 100;

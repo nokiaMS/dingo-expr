@@ -22,9 +22,9 @@ import io.dingodb.expr.rel.op.ProjectOp;
 import io.dingodb.expr.rel.op.UngroupedAggregateOp;
 
 /**
- * 表操作访问函数。
- * @param <R>
- * @param <T>
+ * 表操作访问函数.
+ * @param <R>  待补充。
+ * @param <T>  待补充。
  */
 public interface RelOpVisitor<R, T> {
     R visitSourceOp(SourceOp op, T obj);

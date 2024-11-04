@@ -24,67 +24,67 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.math.BigDecimal;
 
 /**
- * 加法操作。
+ * 加法操作.
  */
 @Operators
 abstract class AddOp extends BinaryNumericOp {
     private static final long serialVersionUID = 7159909541314089027L;
 
     /**
-     * int + int 操作。
-     * @param value0
-     * @param value1
-     * @return
+     * int + int 操作.
+     * @param value0  待补充。
+     * @param value1  待补充。
+     * @return  待补充。
      */
     static int add(int value0, int value1) {
         return value0 + value1;
     }
 
     /**
-     * long + long 操作。
-     * @param value0
-     * @param value1
-     * @return
+     * long + long 操作.
+     * @param value0  待补充。
+     * @param value1  待补充。
+     * @return  待补充。
      */
     static long add(long value0, long value1) {
         return value0 + value1;
     }
 
     /**
-     * float + float操作。
-     * @param value0
-     * @param value1
-     * @return
+     * float + float操作.
+     * @param value0  待补充。
+     * @param value1  待补充。
+     * @return  待补充。
      */
     static float add(float value0, float value1) {
         return value0 + value1;
     }
 
     /**
-     * double + double操作。
-     * @param value0
-     * @param value1
-     * @return
+     * double + double操作.
+     * @param value0  待补充。
+     * @param value1  待补充。
+     * @return  待补充。
      */
     static double add(double value0, double value1) {
         return value0 + value1;
     }
 
     /**
-     * bigdecimal + bigdecimal操作。
-     * @param value0
-     * @param value1
-     * @return
+     * bigdecimal + bigdecimal操作.
+     * @param value0  待补充。
+     * @param value1  待补充。
+     * @return  待补充。
      */
     static @NonNull BigDecimal add(@NonNull BigDecimal value0, @NonNull BigDecimal value1) {
         return value0.add(value1);
     }
 
     /**
-     * string + string 操作。
-     * @param s0
-     * @param s1
-     * @return
+     * string + string 操作.
+     * @param s0  待补充。
+     * @param s1  待补充。
+     * @return  待补充。
      */
     // This is not arithmetic op, but put here to share the same op factory.
     static @NonNull String add(@NonNull String s0, @NonNull String s1) {
@@ -92,8 +92,8 @@ abstract class AddOp extends BinaryNumericOp {
     }
 
     /**
-     * 返回此op的操作类型。
-     * @return
+     * 返回此op的操作类型.
+     * @return  待补充。
      */
     @Override
     public @NonNull OpType getOpType() {

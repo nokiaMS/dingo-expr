@@ -25,7 +25,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 import java.nio.charset.StandardCharsets;
 
 /**
- * bytes数组转换操作。
+ * bytes数组转换操作.
  */
 @Operators
 abstract class BytesCastOp extends CastOp {

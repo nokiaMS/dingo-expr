@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 /**
- * timestamp转换操作。
+ * timestamp转换操作.
  */
 @Operators
 abstract class TimestampCastOp extends CastOp {

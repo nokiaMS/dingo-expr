@@ -22,7 +22,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.io.Serializable;
 
 /**
- * 关系操作。
+ * 关系操作.
  */
 public interface RelOp extends Serializable {
     /**

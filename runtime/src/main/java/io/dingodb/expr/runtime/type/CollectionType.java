@@ -21,7 +21,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
- * 集合类型。
+ * 集合类型.
  */
 @RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class CollectionType implements Type {

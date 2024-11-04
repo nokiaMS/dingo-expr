@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * map类型。
+ * map类型.
  */
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public final class MapType implements Type {

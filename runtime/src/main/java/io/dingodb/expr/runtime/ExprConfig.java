@@ -22,17 +22,17 @@ import java.time.format.DateTimeFormatter;
 import java.util.TimeZone;
 
 /**
- * 表达式配置类。
+ * 表达式配置类.
  */
 public interface ExprConfig {
     /**
-     * 简单表达式配置。
+     * 简单表达式配置.
      */
     ExprConfig SIMPLE = new ExprConfig() {
     };
 
     /**
-     * 高级表达式配置。
+     * 高级表达式配置.
      */
     ExprConfig ADVANCED = new ExprConfig() {
         @Override
@@ -51,7 +51,7 @@ public interface ExprConfig {
     }
 
     /**
-     * 是否进行溢出检测，默认不进行溢出检测。
+     * 是否进行溢出检测，默认不进行溢出检测.
      * @return  true:进行溢出检测;false：不进行溢出检测;
      */
     default boolean withRangeCheck() {
@@ -63,24 +63,24 @@ public interface ExprConfig {
     }
 
     /**
-     * 返回默认时区。
-     * @return
+     * 返回默认时区.
+     * @return  待补充。
      */
     default TimeZone getTimeZone() {
         return TimeZone.getDefault();
     }
 
     /**
-     * 返回默认date格式。
-     * @return
+     * 返回默认date格式.
+     * @return  待补充。
      */
     default DateTimeFormatter[] getParseDateFormatters() {
         return DateTimeUtils.DEFAULT_PARSE_DATE_FORMATTERS;
     }
 
     /**
-     * 返回默认time格式。
-     * @return
+     * 返回默认time格式.
+     * @return  待补充。
      */
     default DateTimeFormatter[] getParseTimeFormatters() {
         return DateTimeUtils.DEFAULT_PARSE_TIME_FORMATTERS;

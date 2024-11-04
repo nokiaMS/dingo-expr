@@ -19,12 +19,12 @@ package io.dingodb.expr.runtime;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * 行计算上下文。
+ * 行计算上下文.
  */
 public interface TupleEvalContext extends EvalContext {
     /**
-     * 设置行。
-     * @param tuple
+     * 设置行.
+     * @param tuple  待补充。
      */
     void setTuple(Object @NonNull [] tuple);
 }

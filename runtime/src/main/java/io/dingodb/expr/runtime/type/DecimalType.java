@@ -19,7 +19,7 @@ package io.dingodb.expr.runtime.type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * decimal类型。
+ * decimal类型.
  */
 public final class DecimalType extends ScalarType {
     public static final String NAME = "DECIMAL";

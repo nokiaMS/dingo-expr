@@ -19,7 +19,7 @@ package io.dingodb.expr.runtime.type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * any类型。
+ * any类型.
  */
 public final class AnyType extends ScalarType {
     public static final String NAME = "ANY";

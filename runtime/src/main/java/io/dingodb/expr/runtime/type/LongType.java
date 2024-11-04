@@ -19,7 +19,7 @@ package io.dingodb.expr.runtime.type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * long类型。
+ * long类型.
  */
 public final class LongType extends ScalarType {
     public static final String NAME = "LONG";

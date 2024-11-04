@@ -19,7 +19,7 @@ package io.dingodb.expr.runtime;
 import io.dingodb.expr.runtime.type.Type;
 
 /**
- * 编译上下文。
+ * 编译上下文.
  */
 public interface CompileContext {
     /**

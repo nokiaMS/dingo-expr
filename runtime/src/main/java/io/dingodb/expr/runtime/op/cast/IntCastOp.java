@@ -26,7 +26,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * 类型转换操作。
+ * 类型转换操作.
  */
 @Operators
 abstract class IntCastOp extends CastOp {
@@ -40,9 +40,9 @@ abstract class IntCastOp extends CastOp {
     }
 
     /**
-     * long转int。
-     * @param value
-     * @return
+     * long转int.
+     * @param value  待补充。
+     * @return  待补充。
      */
     static int intCast(long value) {
         return (int) value;
@@ -50,61 +50,61 @@ abstract class IntCastOp extends CastOp {
 
     /**
      * float转int.
-     * @param value
-     * @return
+     * @param value  待补充。
+     * @return  待补充。
      */
     static int intCast(float value) {
         return Math.round(value);
     }
 
     /**
-     * double转int。
-     * @param value
-     * @return
+     * double转int.
+     * @param value  待补充。
+     * @return  待补充。
      */
     static int intCast(double value) {
         return (int) Math.round(value);
     }
 
     /**
-     * boolean转int。
-     * @param value
-     * @return
+     * boolean转int.
+     * @param value  待补充。
+     * @return  待补充。
      */
     static int intCast(boolean value) {
         return value ? 1 : 0;
     }
 
     /**
-     * bigDecimal转int。
-     * @param value
-     * @return
+     * bigDecimal转int.
+     * @param value  待补充。
+     * @return  待补充。
      */
     static int intCast(@NonNull BigDecimal value) {
         return value.setScale(0, RoundingMode.HALF_UP).intValue();
     }
 
     /**
-     * string转int。
-     * @param value
-     * @return
+     * string转int.
+     * @param value  待补充。
+     * @return  待补充。
      */
     static int intCast(@NonNull String value) {
         return Integer.parseInt(value);
     }
 
     /**
-     * void转int。
-     * @param ignoredValue
-     * @return
+     * void转int.
+     * @param ignoredValue  待补充。
+     * @return  待补充。
      */
     static @Nullable Integer intCast(Void ignoredValue) {
         return null;
     }
 
     /**
-     * 获得转换的类型。
-     * @return
+     * 获得转换的类型.
+     * @return  待补充。
      */
     @Override
     public final Type getType() {

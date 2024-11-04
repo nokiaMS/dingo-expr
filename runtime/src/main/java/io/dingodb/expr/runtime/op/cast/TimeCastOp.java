@@ -27,7 +27,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 import java.sql.Time;
 
 /**
- * time转换操作。
+ * time转换操作.
  */
 @Operators
 abstract class TimeCastOp extends CastOp {

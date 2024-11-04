@@ -17,7 +17,7 @@
 package io.dingodb.expr.runtime.op;
 
 /**
- * 操作符。
+ * 操作符.
  */
 public final class OpSymbol {
     public static final String ARRAY = "[]";    //数组操作符。
@@ -39,7 +39,7 @@ public final class OpSymbol {
     public static final String OR = " || ";     //逻辑或
 
     /**
-     * 默认构造函数为私有，表示这个类不能创建实例对象。
+     * 默认构造函数为私有，表示这个类不能创建实例对象.
      */
     private OpSymbol() {
     }

@@ -27,7 +27,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 import java.sql.Date;
 
 /**
- * date转换操作。
+ * date转换操作.
  */
 @Operators
 abstract class DateCastOp extends CastOp {

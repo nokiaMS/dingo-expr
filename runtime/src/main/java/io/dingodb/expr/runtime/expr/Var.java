@@ -28,29 +28,29 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.Objects;
 
 /**
- * 表示一个变量。
+ * 表示一个变量.
  */
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 @EqualsAndHashCode(of = {"id", "type"})
 public class Var implements Expr {
     /**
-     * 用于Var变量的字符串表示中，Var的字符串表示以一个$开头。
+     * 用于Var变量的字符串表示中，Var的字符串表示以一个$开头.
      */
     public static final String WHOLE_VAR = "$";
 
     /**
-     * 类版本号。
+     * 类版本号.
      */
     private static final long serialVersionUID = -7434384449038456900L;
 
     /**
-     * 变量的id。
+     * 变量的id.
      */
     @Getter
     private final Object id;
 
     /**
-     * 变量类型。
+     * 变量类型.
      */
     @Getter
     private final Type type;
@@ -66,12 +66,12 @@ public class Var implements Expr {
     }
 
     /**
-     * 调用访问者的visitVar函数。
-     * @param visitor
-     * @param obj
-     * @return
-     * @param <R>
-     * @param <T>
+     * 调用访问者的visitVar函数.
+     * @param visitor  待补充。
+     * @param obj  待补充。
+     * @return  待补充。
+     * @param <R>  待补充。
+     * @param <T>  待补充。
      */
     @Override
     public <R, T> R accept(@NonNull ExprVisitor<R, T> visitor, T obj) {
@@ -79,8 +79,8 @@ public class Var implements Expr {
     }
 
     /**
-     * 返回对象的字符串表示。
-     * @return
+     * 返回对象的字符串表示.
+     * @return  待补充。
      */
     @Override
     public @NonNull String toDebugString() {
@@ -88,11 +88,11 @@ public class Var implements Expr {
     }
 
     /**
-     * 设置变量值。
+     * 设置变量值.
      * Set the value of this variable in a specified EvalContext.
      *
-     * @param context the EvalContext
-     * @param value   the new value
+     * @param context the EvalContext  待补充。
+     * @param value   the new value  待补充。
      */
     @SuppressWarnings("unused")
     public void set(EvalContext context, Object value) {
@@ -100,8 +100,8 @@ public class Var implements Expr {
     }
 
     /**
-     * 返回对象的字符串表示。
-     * @return
+     * 返回对象的字符串表示.
+     * @return  待补充。
      */
     @Override
     public String toString() {

@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * 带有溢出检查的int转换操作。
+ * 带有溢出检查的int转换操作.
  */
 @Operators
 abstract class IntCastCheckOp extends CastOp {

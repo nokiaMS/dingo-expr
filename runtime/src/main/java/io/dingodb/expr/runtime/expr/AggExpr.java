@@ -22,7 +22,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * 聚合操作表达式接口。
+ * 聚合操作表达式接口.
  */
 public interface AggExpr {
     /**

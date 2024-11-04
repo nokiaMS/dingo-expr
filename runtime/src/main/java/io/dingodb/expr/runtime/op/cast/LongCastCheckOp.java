@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * 带有异常的long转换操作。
+ * 带有异常的long转换操作.
  */
 @Operators
 abstract class LongCastCheckOp extends CastOp {

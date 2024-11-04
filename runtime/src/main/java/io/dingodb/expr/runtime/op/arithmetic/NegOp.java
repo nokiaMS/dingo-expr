@@ -24,7 +24,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.math.BigDecimal;
 
 /**
- * 负号操作。
+ * 负号操作.
  */
 @Operators
 abstract class NegOp extends UnaryNumericOp {

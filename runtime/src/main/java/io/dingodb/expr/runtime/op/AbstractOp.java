@@ -25,9 +25,9 @@ import io.dingodb.expr.runtime.type.Types;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * 操作的抽象接口。
- * @param <O>
- * @param <E>
+ * 操作的抽象接口.
+ * @param <O>  待补充。
+ * @param <E>  待补充。
  */
 public abstract class AbstractOp<O extends AbstractOp<O, E>, E extends OpExpr<O, E>> implements Op, OpFactory<O> {
     private static final long serialVersionUID = -2046211912438996616L;
@@ -70,7 +70,7 @@ public abstract class AbstractOp<O extends AbstractOp<O, E>, E extends OpExpr<O,
     /**
      * Get the key of op.
      *
-     * @return null for an {@link OpFactory} or a general op, non-null value for a compiled {@link Op}
+     * @return null for an {@link OpFactory} or a general op, non-null value for a compiled {@link Op}  待补充。
      */
     public OpKey getKey() {
         return null;

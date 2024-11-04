@@ -23,9 +23,9 @@ import io.dingodb.expr.rel.op.UngroupedAggregateOp;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * 表操作编码器基类。
- * @param <R>
- * @param <T>
+ * 表操作编码器基类.
+ * @param <R>  待补充。
+ * @param <T>  待补充。
  */
 public class RelOpVisitorBase<R, T> implements RelOpVisitor<R, T> {
     public R visit(@NonNull RelOp op) {

@@ -26,7 +26,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * long转换操作。
+ * long转换操作.
  */
 @Operators
 abstract class LongCastOp extends CastOp {

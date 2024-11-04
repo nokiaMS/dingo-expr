@@ -31,7 +31,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 
 /**
- * string转换操作。
+ * string转换操作.
  */
 @Operators
 abstract class StringCastOp extends CastOp {

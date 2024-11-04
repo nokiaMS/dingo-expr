@@ -19,7 +19,7 @@ package io.dingodb.expr.runtime.type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * bool类型。
+ * bool类型.
  */
 public final class BoolType extends ScalarType {
     public static final String NAME = "BOOL";

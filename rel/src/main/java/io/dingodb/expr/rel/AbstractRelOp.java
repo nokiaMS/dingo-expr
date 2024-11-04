@@ -22,7 +22,7 @@ import io.dingodb.expr.runtime.type.TupleType;
 import lombok.EqualsAndHashCode;
 
 /**
- * 抽象关系操作。
+ * 抽象关系操作.
  */
 @EqualsAndHashCode(callSuper = true)
 public abstract class AbstractRelOp extends TypedRelOp {

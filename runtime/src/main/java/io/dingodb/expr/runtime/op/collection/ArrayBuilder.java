@@ -45,20 +45,20 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 数组构建器，定义了各种类型的数组对象。
+ * 数组构建器，定义了各种类型的数组对象.
  */
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public final class ArrayBuilder extends TypeVisitorBase<Object, @NonNull Integer> {
     /**
-     * 默认实例。
+     * 默认实例.
      */
     public static final ArrayBuilder INSTANCE = new ArrayBuilder();
 
     /**
-     * 给定
-     * @param type
-     * @param obj
-     * @return
+     * 给定.
+     * @param type  待补充。
+     * @param obj  待补充。
+     * @return   待补充。
      */
     @Override
     public @NonNull Object visitIntType(@NonNull IntType type, @NonNull Integer obj) {

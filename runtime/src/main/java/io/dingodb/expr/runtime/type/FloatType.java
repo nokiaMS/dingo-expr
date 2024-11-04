@@ -19,7 +19,7 @@ package io.dingodb.expr.runtime.type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * float类型。
+ * float类型.
  */
 public final class FloatType extends ScalarType {
     public static final String NAME = "FLOAT";

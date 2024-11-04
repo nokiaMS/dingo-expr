@@ -20,7 +20,7 @@ import io.dingodb.expr.runtime.ExprConfig;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * 聚合操作接口。
+ * 聚合操作接口.
  */
 public interface Agg {
     /**

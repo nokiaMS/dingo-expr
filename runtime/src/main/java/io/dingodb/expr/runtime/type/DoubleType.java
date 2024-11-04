@@ -19,7 +19,7 @@ package io.dingodb.expr.runtime.type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * double类型。
+ * double类型.
  */
 public final class DoubleType extends ScalarType {
     public static final String NAME = "DOUBLE";

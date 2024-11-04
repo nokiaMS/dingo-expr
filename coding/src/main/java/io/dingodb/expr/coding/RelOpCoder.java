@@ -36,22 +36,22 @@ import java.io.OutputStream;
 import java.util.List;
 
 /**
- * 表操作编码器。
+ * 表操作编码器.
  */
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class RelOpCoder extends RelOpVisitorBase<CodingFlag, @NonNull OutputStream> {
     /**
-     * 默认实例。
+     * 默认实例.
      */
     public static final RelOpCoder INSTANCE = new RelOpCoder();
 
     /**
-     * 关联的表达式编码器。
+     * 关联的表达式编码器.
      */
     private static final ExprCoder EXPR_CODER = ExprCoder.INSTANCE;
 
     /**
-     * 定义了几种表操作的编码：
+     * 定义了几种表操作的编码.
      *      filter：过滤；
      *      project：投影；
      *      grouped_aggregate：分组聚合；
@@ -63,7 +63,7 @@ public class RelOpCoder extends RelOpVisitorBase<CodingFlag, @NonNull OutputStre
     private static final byte UNGROUPED_AGGREGATE = (byte) 0x74;
 
     /**
-     * 表达式结束标志。
+     * 表达式结束标志.
      */
     // End of expression
     private static final byte EOE = (byte) 0x00;
@@ -96,10 +96,9 @@ public class RelOpCoder extends RelOpVisitorBase<CodingFlag, @NonNull OutputStre
     }
 
     /**
-     * 投影操作的编码函数。（投影：从表的查询结果中选择相应的列。）
-     * 格式： byte1(操作编码:0x72) + ... + EOE
-     * @param op
-     * @param obj
+     * 投影操作的编码函数。（投影：从表的查询结果中选择相应的列。）.
+     * @param op  待补充。
+     * @param obj  待补充。
      * @return  编码成功返回OK，否则返回null。
      */
     @SneakyThrows

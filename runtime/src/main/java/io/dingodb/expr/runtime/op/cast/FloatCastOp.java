@@ -25,7 +25,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 import java.math.BigDecimal;
 
 /**
- * float转换操作。
+ * float转换操作.
  */
 @Operators
 abstract class FloatCastOp extends CastOp {

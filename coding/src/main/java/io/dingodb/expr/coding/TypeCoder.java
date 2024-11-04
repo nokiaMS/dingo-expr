@@ -29,13 +29,13 @@ import lombok.RequiredArgsConstructor;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * 类型编码器，返回对应类型的编码值。
+ * 类型编码器，返回对应类型的编码值.
  */
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 class TypeCoder extends TypeVisitorBase<Byte, Void> {
 
     /**
-     * 定义了各种类型的编码值。
+     * 定义了各种类型的编码值.
      */
     public static final byte TYPE_INT32 = (byte) 0x01;
     public static final byte TYPE_INT64 = (byte) 0x02;
@@ -47,9 +47,9 @@ class TypeCoder extends TypeVisitorBase<Byte, Void> {
     static final TypeCoder INSTANCE = new TypeCoder();
 
     /**
-     * int类型编码器。
-     * @param type
-     * @param obj
+     * int类型编码器.
+     * @param type  待补充。
+     * @param obj  待补充。
      * @return  返回int类型的编码值。
      */
     @Override
@@ -58,10 +58,10 @@ class TypeCoder extends TypeVisitorBase<Byte, Void> {
     }
 
     /**
-     * 返回long类型的编码值。
-     * @param type
-     * @param obj
-     * @return
+     * 返回long类型的编码值.
+     * @param type  待补充。
+     * @param obj  待补充。
+     * @return  待补充。
      */
     @Override
     public Byte visitLongType(@NonNull LongType type, Void obj) {
@@ -69,10 +69,10 @@ class TypeCoder extends TypeVisitorBase<Byte, Void> {
     }
 
     /**
-     * float类型编码器。
-     * @param type
-     * @param obj
-     * @return
+     * float类型编码器.
+     * @param type  待补充。
+     * @param obj  待补充。
+     * @return  待补充。
      */
     @Override
     public Byte visitFloatType(@NonNull FloatType type, Void obj) {
@@ -80,10 +80,10 @@ class TypeCoder extends TypeVisitorBase<Byte, Void> {
     }
 
     /**
-     * double类型编码器。
-     * @param type
-     * @param obj
-     * @return
+     * double类型编码器.
+     * @param type  待补充。
+     * @param obj  待补充。
+     * @return  待补充。
      */
     @Override
     public Byte visitDoubleType(@NonNull DoubleType type, Void obj) {
@@ -91,10 +91,10 @@ class TypeCoder extends TypeVisitorBase<Byte, Void> {
     }
 
     /**
-     * bool类型编码器。
-     * @param type
-     * @param obj
-     * @return
+     * bool类型编码器.
+     * @param type  待补充。
+     * @param obj  待补充。
+     * @return  待补充。
      */
     @Override
     public Byte visitBoolType(@NonNull BoolType type, Void obj) {
@@ -102,10 +102,10 @@ class TypeCoder extends TypeVisitorBase<Byte, Void> {
     }
 
     /**
-     * decimal类型编码器。
-     * @param type
-     * @param obj
-     * @return
+     * decimal类型编码器.
+     * @param type  待补充。
+     * @param obj  待补充。
+     * @return  待补充。
      */
     @Override
     public Byte visitDecimalType(@NonNull DecimalType type, Void obj) {
@@ -114,10 +114,10 @@ class TypeCoder extends TypeVisitorBase<Byte, Void> {
     }
 
     /**
-     * string类型编码器。
-     * @param type
-     * @param obj
-     * @return
+     * string类型编码器.
+     * @param type  待补充。
+     * @param obj  待补充。
+     * @return  待补充。
      */
     @Override
     public Byte visitStringType(@NonNull StringType type, Void obj) {

@@ -19,11 +19,11 @@ package io.dingodb.expr.runtime;
 import java.io.Serializable;
 
 /**
- * 计算上下文。
+ * 计算上下文.
  */
 public interface EvalContext extends Serializable {
     /**
-     * 通过id获得一个变量的值。
+     * 通过id获得一个变量的值.
      * Get the value of a variable by its id.
      *
      * @param id the id of the variable
@@ -32,7 +32,7 @@ public interface EvalContext extends Serializable {
     Object get(Object id);
 
     /**
-     * 通过id设置一个变量的值。
+     * 通过id设置一个变量的值.
      * Set the value of a variable by its id.
      *
      * @param id    the id of the variable

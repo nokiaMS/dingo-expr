@@ -24,11 +24,11 @@ import io.dingodb.expr.runtime.expr.Var;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * 变量工厂，创建指定类型的变量。
+ * 变量工厂，创建指定类型的变量.
  */
 public final class VarFactory {
     /**
-     * 默认构造函数。
+     * 默认构造函数.
      */
     private VarFactory() {
     }
@@ -45,9 +45,9 @@ public final class VarFactory {
     }
 
     /**
-     * 变量创建接口。
-     * @param context
-     * @return
+     * 变量创建接口.
+     * @param context  待补充。
+     * @return  待补充。
      */
     static @NonNull Expr createVar(@NonNull CompileContext context) {
         //获得

@@ -26,7 +26,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * count聚合操作。
+ * count聚合操作.
  */
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public final class CountAgg extends UnaryAgg {

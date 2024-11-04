@@ -27,7 +27,7 @@ import lombok.Getter;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * 一元操作表达式。
+ * 一元操作表达式.
  */
 @EqualsAndHashCode(of = {"operand"}, callSuper = true)
 public class UnaryOpExpr extends OpExpr<UnaryOp, UnaryOpExpr> {
@@ -60,12 +60,12 @@ public class UnaryOpExpr extends OpExpr<UnaryOp, UnaryOpExpr> {
     }
 
     /**
-     * 调用visitor的visitUnaryOpExpr以处理二元操作表达式。
-     * @param visitor
-     * @param obj
-     * @return
-     * @param <R>
-     * @param <T>
+     * 调用visitor的visitUnaryOpExpr以处理二元操作表达式.
+     * @param visitor  待补充。
+     * @param obj  待补充。
+     * @return  待补充。
+     * @param <R>  待补充。
+     * @param <T>  待补充。
      */
     @Override
     public <R, T> R accept(@NonNull ExprVisitor<R, T> visitor, T obj) {

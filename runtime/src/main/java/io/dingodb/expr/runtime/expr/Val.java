@@ -44,7 +44,7 @@ import java.sql.Timestamp;
 import static io.dingodb.expr.runtime.utils.DateTimeUtils.toSecond;
 
 /**
- * 表示一个值（值也是一个表达式。）。
+ * 表示一个值（值也是一个表达式。）.
  */
 @Getter
 @EqualsAndHashCode(of = {"value", "type"})
@@ -91,21 +91,21 @@ public final class Val implements Expr {
     private static final long serialVersionUID = -5457707032677852803L;
 
     /**
-     * 值对象的值。
+     * 值对象的值.
      */
     @Getter
     private final Object value;
 
     /**
-     * 值对象的类型。
+     * 值对象的类型.
      */
     @Getter
     private final Type type;
 
     /**
-     *  Val的构造函数，一个值类型由值和他的类型两个属性组成。
-     * @param value
-     * @param type
+     *  Val的构造函数，一个值类型由值和他的类型两个属性组成.
+     * @param value  待补充。
+     * @param type  待补充。
      */
     Val(Object value, Type type) {
         this.value = value;
@@ -113,9 +113,9 @@ public final class Val implements Expr {
     }
 
     /**
-     * 字面量转为整型Val对象，根据值的范围可能转为int,long或者decimal。
-     * @param text
-     * @return
+     * 字面量转为整型Val对象，根据值的范围可能转为int,long或者decimal.
+     * @param text  待补充。
+     * @return  待补充。
      */
     public static @NonNull Val parseLiteralInt(String text) {
         try {
@@ -130,18 +130,18 @@ public final class Val implements Expr {
     }
 
     /**
-     * 字面量转换为real类型（real实际就是decimal类型）。
-     * @param text
-     * @return
+     * 字面量转换为real类型（real实际就是decimal类型）.
+     * @param text  待补充。
+     * @return  待补充。
      */
     public static @NonNull Val parseLiteralReal(String text) {
         return new Val(new BigDecimal(text), Types.DECIMAL);
     }
 
     /**
-     * 字面量转为string类型。
-     * @param text
-     * @return
+     * 字面量转为string类型.
+     * @param text  待补充。
+     * @return  待补充。
      */
     public static @NonNull Val parseLiteralString(@NonNull String text) {
         return new Val(StringEscapeUtils.unescapeJson(text.substring(1, text.length() - 1)), Types.STRING);
@@ -152,10 +152,10 @@ public final class Val implements Expr {
     }
 
     /**
-     * 计算Val的值（Val是表达式的叶子节点，计算方式是直接返回Val的value字段。）
-     * @param context the specified {@link EvalContext}, containing variables
-     * @param config  the specified {@link ExprConfig}, containing eval config, like time zone.
-     * @return
+     * 计算Val的值（Val是表达式的叶子节点，计算方式是直接返回Val的value字段。）.
+     * @param context the specified {@link EvalContext}, containing variables  待补充。
+     * @param config  the specified {@link ExprConfig}, containing eval config, like time zone.  待补充。
+     * @return  待补充。
      */
     @Override
     public Object eval(EvalContext context, ExprConfig config) {
@@ -168,12 +168,12 @@ public final class Val implements Expr {
     }
 
     /**
-     * 调用访问者的visitVal函数。
-     * @param visitor
-     * @param obj
-     * @return
-     * @param <R>
-     * @param <T>
+     * 调用访问者的visitVal函数.
+     * @param visitor  待补充。
+     * @param obj  待补充。
+     * @return  待补充。
+     * @param <R>  待补充。
+     * @param <T>  待补充。
      */
     @Override
     public <R, T> R accept(@NonNull ExprVisitor<R, T> visitor, T obj) {
@@ -181,8 +181,8 @@ public final class Val implements Expr {
     }
 
     /**
-     * 调试阶段显示类信息字符串。
-     * @return
+     * 调试阶段显示类信息字符串.
+     * @return  待补充。
      */
     @Override
     public @NonNull String toDebugString() {
@@ -190,8 +190,8 @@ public final class Val implements Expr {
     }
 
     /**
-     * 转为字符串。
-     * @return
+     * 转为字符串.
+     * @return  待补充。
      */
     @Override
     public String toString() {
@@ -200,9 +200,9 @@ public final class Val implements Expr {
     }
 
     /**
-     * 更智能的字符串转换方式。
-     * @param obj
-     * @return
+     * 更智能的字符串转换方式.
+     * @param obj  待补充。
+     * @return  待补充。
      */
     private String smartToString(Object obj) {
         if (obj == null) {

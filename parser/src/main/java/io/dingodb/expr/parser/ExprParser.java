@@ -31,16 +31,16 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import java.util.List;
 
 /**
- * 表达式编译器。
+ * 表达式编译器.
  */
 public final class ExprParser {
     /**
-     * 默认的表达式解析器实例。
+     * 默认的表达式解析器实例.
      */
     public static final ExprParser DEFAULT = new ExprParser(new DefaultFunFactory(ExprConfig.SIMPLE));
 
     /**
-     * 表达式访问者。
+     * 表达式访问者.
      */
     private final DingoExprParserVisitorImpl visitor;
 
@@ -49,12 +49,12 @@ public final class ExprParser {
     }
 
     /**
-     * 把一个表达式字符串解析成未编译的Expr表达式。
+     * 把一个表达式字符串解析成未编译的Expr表达式.
      * Parse a given string input into an un-compiled {@link Expr}.
      *
-     * @param input the given string    表达式字符串。
-     * @return the {@link Expr}         解析后的Expr表达式。
-     * @throws ExprParseException if errors occurred in parsing
+     * @param input the given string    表达式字符串.
+     * @return the {@link Expr}         解析后的Expr表达式.
+     * @throws ExprParseException if errors occurred in parsing.
      */
     public Expr parse(String input) throws ExprParseException {
         //字符串转换为字符流。

@@ -24,7 +24,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.math.BigDecimal;
 
 /**
- * 正号操作。
+ * 正号操作.
  */
 @Operators
 abstract class PosOp extends UnaryNumericOp {

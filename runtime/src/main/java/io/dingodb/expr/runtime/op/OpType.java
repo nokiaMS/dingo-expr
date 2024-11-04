@@ -19,7 +19,7 @@ package io.dingodb.expr.runtime.op;
 import lombok.Getter;
 
 /**
- * 操作类型。
+ * 操作类型.
  */
 public enum OpType {
     INDEX(OpSymbol.ARRAY, 0),

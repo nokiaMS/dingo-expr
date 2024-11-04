@@ -17,8 +17,8 @@
 package io.dingodb.expr.runtime.op;
 
 /**
- * 操作工厂接口。
- * @param <O>
+ * 操作工厂接口.
+ * @param <O>  待补充。
  */
 public interface OpFactory<O extends Op> {
     O getOp(OpKey key);

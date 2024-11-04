@@ -47,10 +47,10 @@ public final class CodecUtils {
     }
 
     /**
-     * 对整型变量编码。(>>>表示无符号右移。)
+     * 对整型变量进行编码.
      * @param os    输出流
      * @param value 值
-     * @throws IOException
+     * @throws IOException  待补充。
      */
     public static void encodeVarInt(@NonNull OutputStream os, long value) throws IOException {
         while ((value & ~0x7F) != 0) {

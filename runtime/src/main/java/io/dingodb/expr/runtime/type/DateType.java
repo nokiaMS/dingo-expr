@@ -19,7 +19,7 @@ package io.dingodb.expr.runtime.type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * date类型。
+ * date类型.
  */
 public final class DateType extends ScalarType {
     public static final String NAME = "DATE";

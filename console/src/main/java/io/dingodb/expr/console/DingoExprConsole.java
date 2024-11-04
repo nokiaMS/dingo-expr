@@ -26,19 +26,19 @@ import java.io.InputStreamReader;
 import java.util.ResourceBundle;
 
 /**
- * dingo-expr的控制台程序入口。
+ * dingo-expr的控制台程序入口.
  */
 @Slf4j
 public final class DingoExprConsole {
     /**
-     * 默认构造函数。
+     * 默认构造函数.
      */
     private DingoExprConsole() {
     }
 
     /**
-     * 主函数。
-     * @param args
+     * 主函数.
+     * @param args  参数.
      */
     public static void main(String[] args) {
         //ResourceBundle是一个处理国际化资源的类，提供了加载不同语言版本的资源文件的能力。他使得我们在不修改代码的情况下，根据用户的语言环境切换显示内容。

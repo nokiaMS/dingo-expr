@@ -156,7 +156,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.Arrays;
 
 /**
- * 集合了各种操作的实例对象。
+ * 集合了各种操作的实例对象.
  */
 public final class Exprs {
     // Castings，类型转换函数。

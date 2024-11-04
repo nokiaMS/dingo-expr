@@ -55,7 +55,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * 表达式编码器。
+ * 表达式编码器.
  */
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class ExprCoder extends ExprVisitorBase<CodingFlag, @NonNull OutputStream> {
@@ -144,11 +144,10 @@ public class ExprCoder extends ExprVisitorBase<CodingFlag, @NonNull OutputStream
     }
 
     /**
-     * 对变量进行编码。
-     * 编码格式：byte1<xxxx:var标识(0x30), xxxx:变量类型编码>
-     * @param expr
-     * @param obj
-     * @return
+     * 对变量进行编码.
+     * @param expr  表达式。
+     * @param obj   对象。
+     * @return  待补充。
      */
     @SneakyThrows
     @Override

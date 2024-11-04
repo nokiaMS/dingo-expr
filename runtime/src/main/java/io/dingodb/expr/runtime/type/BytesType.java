@@ -19,7 +19,7 @@ package io.dingodb.expr.runtime.type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * bytes类型。
+ * bytes类型.
  */
 public final class BytesType extends ScalarType {
     public static final String NAME = "BYTES";

@@ -25,7 +25,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * 一元聚合操作。
+ * 一元聚合操作.
  */
 public abstract class UnaryAgg extends UnaryOp implements Agg {
     private static final long serialVersionUID = -1765824099692470414L;

@@ -26,7 +26,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * 除法操作。
+ * 除法操作.
  */
 @Operators
 abstract class DivOp extends BinaryNumericOp {

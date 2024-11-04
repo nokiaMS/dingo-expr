@@ -25,7 +25,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 import java.math.BigDecimal;
 
 /**
- * decimal转换操作。
+ * decimal转换操作.
  */
 @Operators
 abstract class DecimalCastOp extends CastOp {

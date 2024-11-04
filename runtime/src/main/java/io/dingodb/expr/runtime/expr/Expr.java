@@ -24,12 +24,12 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.io.Serializable;
 
 /**
- * Expr表示一个表达式，继承了java的序列化接口。
- * 是所有表达式的基类。
+ * Expr表示一个表达式，继承了java的序列化接口.
+ * 是所有表达式的基类.
  */
 public interface Expr extends Serializable {
     /**
-     * 计算表达式。
+     * 计算表达式.
      * Evaluate the result of this {@link Expr} in a specified {@link EvalContext} and {@link ExprConfig}.
      *
      * @param context the specified {@link EvalContext}, containing variables
@@ -39,28 +39,28 @@ public interface Expr extends Serializable {
     Object eval(EvalContext context, ExprConfig config);
 
     /**
-     * 计算表达式并返回结果。
-     * @return
+     * 计算表达式并返回结果.
+     * @return   待补充。
      */
     default Object eval() {
         return eval(null, ExprConfig.SIMPLE);
     }
 
     /**
-     * 获得表达式类型。
-     * @return
+     * 获得表达式类型.
+     * @return  待补充。
      */
     Type getType();
 
     @NonNull Expr simplify(ExprConfig config);
 
     /**
-     * 调用visitor的visit方法。
-     * @param visitor
-     * @param obj
-     * @return
-     * @param <R>
-     * @param <T>
+     * 调用visitor的visit方法.
+     * @param visitor  待补充。
+     * @param obj  待补充。
+     * @return  待补充。
+     * @param <R>  待补充。
+     * @param <T>  待补充。
      */
     <R, T> R accept(@NonNull ExprVisitor<R, T> visitor, T obj);
 

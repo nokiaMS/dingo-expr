@@ -20,7 +20,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * int类型。
+ * int类型.
  */
 public final class IntType extends ScalarType {
     public static final String NAME = "INT";

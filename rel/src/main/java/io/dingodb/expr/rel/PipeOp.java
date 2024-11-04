@@ -20,7 +20,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * 管道操作。
+ * 管道操作.
  */
 public interface PipeOp extends RelOp {
     Object @Nullable [] put(Object @NonNull [] tuple);

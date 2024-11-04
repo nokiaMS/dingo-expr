@@ -19,9 +19,9 @@ package io.dingodb.expr.runtime.type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * 类型访问者基类，实现了TypeVisitor接口。
- * @param <R>
- * @param <T>
+ * 类型访问者基类，实现了TypeVisitor接口.
+ * @param <R>  待补充。
+ * @param <T>  待补充。
  */
 public abstract class TypeVisitorBase<R, T> implements TypeVisitor<R, T> {
     public R visit(@NonNull Type type) {

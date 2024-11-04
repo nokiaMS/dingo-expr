@@ -24,7 +24,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.math.BigDecimal;
 
 /**
- * 乘法操作。
+ * 乘法操作.
  */
 @Operators
 abstract class MulOp extends BinaryNumericOp {

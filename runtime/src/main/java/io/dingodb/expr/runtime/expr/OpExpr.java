@@ -23,9 +23,9 @@ import lombok.Getter;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * 操作表达式。
- * @param <O>
- * @param <E>
+ * 操作表达式.
+ * @param <O>  待补充。
+ * @param <E>  待补充。
  */
 @EqualsAndHashCode(of = {"op"})
 public abstract class OpExpr<O extends AbstractOp<O, E>, E extends OpExpr<O, E>> implements Expr {
@@ -35,8 +35,8 @@ public abstract class OpExpr<O extends AbstractOp<O, E>, E extends OpExpr<O, E>>
     protected final O op;
 
     /**
-     * 构造函数。
-     * @param op
+     * 构造函数.
+     * @param op   待补充。
      */
     protected OpExpr(O op) {
         this.op = op;

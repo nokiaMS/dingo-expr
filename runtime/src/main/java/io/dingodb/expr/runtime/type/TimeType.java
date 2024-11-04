@@ -19,7 +19,7 @@ package io.dingodb.expr.runtime.type;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
- * time类型。
+ * time类型.
  */
 public final class TimeType extends ScalarType {
     public static final String NAME = "TIME";

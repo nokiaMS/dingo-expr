@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 提供了各种类型的实例对象。
+ * 提供了各种类型的实例对象.
  */
 public final class Types {
     public static final NullType NULL = new NullType();

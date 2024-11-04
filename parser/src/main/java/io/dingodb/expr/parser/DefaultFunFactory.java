@@ -118,7 +118,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * 函数工厂实现类。
+ * 函数工厂实现类.
  */
 public class DefaultFunFactory implements FunFactory {
     protected final Map<String, NullaryOp> nullaryFunMap;
@@ -128,7 +128,7 @@ public class DefaultFunFactory implements FunFactory {
     protected final Map<String, VariadicOp> variadicFunMap;
 
     /**
-     * 构造函数。
+     * 构造函数.
      * @param config    配置对象。
      */
     public DefaultFunFactory(@NonNull ExprConfig config) {

@@ -24,7 +24,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.Arrays;
 
 /**
- * tuple类型。
+ * tuple类型.
  */
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class TupleType implements Type {
