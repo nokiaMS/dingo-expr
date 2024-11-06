@@ -35,6 +35,11 @@ public interface Type extends OpKey {
         return numericPrecedence() != NOT_NUMERIC;
     }
 
+    /**
+     * 判断两个类型是否一致.
+     * @param type  待比较类型.
+     * @return  布尔值。
+     */
     default boolean matches(@NonNull Object type) {
         // Types.NULL can be converted to any type.
         return equals(type) || Types.NULL.equals(type);

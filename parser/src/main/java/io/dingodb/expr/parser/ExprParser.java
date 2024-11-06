@@ -31,7 +31,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import java.util.List;
 
 /**
- * 表达式编译器.
+ * 表达式翻译器.
  */
 public final class ExprParser {
     /**

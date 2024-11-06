@@ -33,6 +33,10 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 public class UnaryOpExpr extends OpExpr<UnaryOp, UnaryOpExpr> {
     private static final long serialVersionUID = 7964987353969166202L;
 
+    /**
+     * 操作数.
+     * 一元操作只有一个操作数。
+     */
     @Getter
     protected final Expr operand;
 

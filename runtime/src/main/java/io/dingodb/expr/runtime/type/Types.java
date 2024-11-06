@@ -161,6 +161,7 @@ public final class Types {
     }
 
     /**
+     * 把一个java类型映射到dingo类型.
      * Get the {@link Type} of a {@link Class}.
      * {@link List} stands for all its subtypes because they share the same operations,
      * and {@link Map} for all its subtypes.
@@ -206,6 +207,7 @@ public final class Types {
     }
 
     /**
+     * 通过存储的值的真实类型映射到dingo自己的类型，然后返回映射后的dingo类型.
      * Get the {@link Type} of an {@link Object} by get its class first.
      *
      * @param value the {@link Object}
@@ -215,6 +217,7 @@ public final class Types {
         if (value == null) {
             return NULL;
         }
+        //获取值的类，然后映射到dingo类型并返回。
         return classType(value.getClass());
     }
 

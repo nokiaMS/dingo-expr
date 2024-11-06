@@ -45,6 +45,7 @@ import static io.dingodb.expr.runtime.utils.DateTimeUtils.toSecond;
 
 /**
  * 表示一个值（值也是一个表达式。）.
+ * 一个Val包含value域表示值，包含type域表示值的类型。
  */
 @Getter
 @EqualsAndHashCode(of = {"value", "type"})

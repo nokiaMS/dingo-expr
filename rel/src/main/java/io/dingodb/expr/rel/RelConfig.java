@@ -21,14 +21,28 @@ import io.dingodb.expr.runtime.ExprCompiler;
 import io.dingodb.expr.runtime.TupleEvalContext;
 import io.dingodb.expr.runtime.TupleEvalContextImpl;
 
+/**
+ * 关系配置接口.
+ */
 public interface RelConfig {
+    /**
+     * 默认实例.
+     */
     RelConfig DEFAULT = new RelConfig() {
     };
 
+    /**
+     * 获得表达式翻译器.
+     * @return   表达式翻译器.
+     */
     default ExprParser getExprParser() {
         return ExprParser.DEFAULT;
     }
 
+    /**
+     * 获得表达式编译器.
+     * @return   表达式编译器.
+     */
     default ExprCompiler getExprCompiler() {
         return ExprCompiler.ADVANCED;
     }

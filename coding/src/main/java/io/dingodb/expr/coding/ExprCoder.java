@@ -138,6 +138,12 @@ public class ExprCoder extends ExprVisitorBase<CodingFlag, @NonNull OutputStream
         return true;
     }
 
+    /**
+     * 对值进行编码.
+     * @param expr  值表达式。
+     * @param obj  输出流对象。
+     * @return  编码状态。
+     */
     @Override
     public CodingFlag visitVal(@NonNull Val expr, OutputStream obj) {
         return new ValCoder(expr).visit(expr.getType(), obj);

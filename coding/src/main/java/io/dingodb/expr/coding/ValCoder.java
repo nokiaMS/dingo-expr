@@ -34,6 +34,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Val值类型的编码.
+ */
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 class ValCoder extends TypeVisitorBase<CodingFlag, OutputStream> {
     private static final byte NULL = (byte) 0x00;
@@ -42,6 +45,12 @@ class ValCoder extends TypeVisitorBase<CodingFlag, OutputStream> {
 
     private final Val val;
 
+    /**
+     * 对整型值进行编码.
+     * @param type      整数类型对象.
+     * @param obj       输出流对象
+     * @return      编码状态。
+     */
     @SneakyThrows
     @Override
     public CodingFlag visitIntType(@NonNull IntType type, OutputStream obj) {

@@ -57,10 +57,10 @@ public class RelOpCoder extends RelOpVisitorBase<CodingFlag, @NonNull OutputStre
      *      grouped_aggregate：分组聚合；
      *      ungrouped_aggregate：非分组聚合；
      */
-    private static final byte FILTER = (byte) 0x71;
-    private static final byte PROJECT = (byte) 0x72;        //定义了投影操作的编码。
-    private static final byte GROUPED_AGGREGATE = (byte) 0x73;
-    private static final byte UNGROUPED_AGGREGATE = (byte) 0x74;
+    private static final byte FILTER = (byte) 0x71;                 //过滤
+    private static final byte PROJECT = (byte) 0x72;                //投影
+    private static final byte GROUPED_AGGREGATE = (byte) 0x73;      //分组聚合
+    private static final byte UNGROUPED_AGGREGATE = (byte) 0x74;    //非分组聚合
 
     /**
      * 表达式结束标志.
@@ -84,6 +84,12 @@ public class RelOpCoder extends RelOpVisitorBase<CodingFlag, @NonNull OutputStre
         return null;
     }
 
+    /**
+     * 过滤操作的编码函数.
+     * @param op        过滤操作对象。
+     * @param obj       输出流。
+     * @return          成功返回OK，失败返回null。
+     */
     @SneakyThrows
     @Override
     public CodingFlag visitFilterOp(@NonNull FilterOp op, @NonNull OutputStream obj) {

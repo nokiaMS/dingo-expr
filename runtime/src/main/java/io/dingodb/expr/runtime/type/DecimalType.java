@@ -24,6 +24,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 public final class DecimalType extends ScalarType {
     public static final String NAME = "DECIMAL";
 
+    /**
+     * decimal类型的编码值.
+     */
     private static final int CODE = 6;
 
     DecimalType() {

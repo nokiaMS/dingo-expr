@@ -57,16 +57,26 @@ public class ExprCompiler extends ExprVisitorBase<Expr, CompileContext> {
         return new ExprCompiler(config);
     }
 
+    /**
+     * 编译Val对象.
+     * @param expr  待编译表达式。
+     * @param obj  未使用。
+     * @return
+     */
     @Override
     public Expr visitVal(@NonNull Val expr, CompileContext obj) {
+        //获得值的类型。
         Type type = expr.getType();
         // Do not touch non-scalar type for there's no casting for them.
+        //不处理非标量数据，因为非标量数据也没有对应的转换关系。
         if (type.isScalar()) {
             Object value = expr.getValue();
+            //获得值的dingodb类型。
             Type valueType = Types.valueType(value);
             if (type.matches(valueType)) {
                 return expr;
             }
+            //如果类型不匹配则进行转换。
             return CastingFactory.get(type, config).compile(Exprs.val(value), config);
         }
         return expr;
@@ -95,6 +105,12 @@ public class ExprCompiler extends ExprVisitorBase<Expr, CompileContext> {
         return config.withSimplification() ? expr.simplify(config) : expr;
     }
 
+    /**
+     * 编译一元操作表达式.
+     * @param expr  一元操作表达式。
+     * @param obj  待补充。
+     * @return  待补充。
+     */
     @Override
     public Expr visitUnaryOpExpr(@NonNull UnaryOpExpr expr, CompileContext obj) {
         Expr operand = visit(expr.getOperand(), obj);
