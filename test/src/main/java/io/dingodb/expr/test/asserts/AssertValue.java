@@ -17,6 +17,7 @@
 package io.dingodb.expr.test.asserts;
 
 import java.lang.reflect.Array;
+import java.sql.Date;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -49,6 +50,10 @@ public class AssertValue extends Assert<Object> {
             for (int i = 0; i < size; ++i) {
                 new AssertValue(((List<?>) instance).get(i)).isEqualTo(((List<?>) expected).get(i));
             }
+        } else if (expected instanceof Date) {
+            long st = ((Date)instance).getTime();
+            long dt = ((Date) expected).getTime();
+            assertThat(st).isEqualTo(dt);
         } else {
             assertThat(instance).isEqualTo(expected);
         }

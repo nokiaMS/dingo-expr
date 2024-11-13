@@ -15,10 +15,12 @@
 #include "libexpr_jni.h"
 
 #include <jni.h>
+#include <iostream>
 
 #include "expr/exception.h"
 #include "expr/runner.h"
 
+using namespace std;
 using namespace dingodb::expr;
 
 const struct JavaClassInfo {
@@ -41,6 +43,15 @@ jobject JavaObject(JNIEnv *jenv, const Operand &v) {
     jclass resClass = jenv->FindClass(JAVA_CLASS[T].name);
     jmethodID ctor  = jenv->GetMethodID(resClass, "<init>", JAVA_CLASS[T].initSigature);
     return jenv->NewObject(resClass, ctor, v.GetValue<TypeOf<T>>());
+  }
+  return nullptr;
+}
+
+jobject JavaObjectForDate(JNIEnv *jenv, const Operand &v) {
+  if (v != nullptr) {
+    jclass resClass = jenv->FindClass("Ljava/sql/Date;");
+    jmethodID ctor  = jenv->GetMethodID(resClass, "<init>", "(J)V");
+    return jenv->NewObject(resClass, ctor, v.GetValue<TypeOf<TYPE_DATE>>());
   }
   return nullptr;
 }
@@ -85,6 +96,7 @@ JNIEXPORT jobject JNICALL Java_io_dingodb_expr_jni_LibExprJni_run(JNIEnv *jenv, 
     jenv->ThrowNew(jcls, e.what());
     return nullptr;
   }
+
   auto type = runner->GetType();
   Operand v = runner->Get();
   switch (type) {
@@ -100,6 +112,8 @@ JNIEXPORT jobject JNICALL Java_io_dingodb_expr_jni_LibExprJni_run(JNIEnv *jenv, 
     return JavaObject<TYPE_DOUBLE>(jenv, v);
   case TYPE_STRING:
     return JavaObject<TYPE_STRING>(jenv, v);
+  case TYPE_DATE:
+    return JavaObjectForDate(jenv, v);
   }
   return nullptr;
 }
