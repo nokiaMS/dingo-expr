@@ -17,24 +17,30 @@
 package io.dingodb.expr.runtime.op.arithmetic;
 
 import io.dingodb.expr.annotations.Operators;
+import io.dingodb.expr.common.type.DoubleType;
+import io.dingodb.expr.common.type.Type;
 import io.dingodb.expr.runtime.op.BinaryNumericOp;
+import io.dingodb.expr.runtime.op.OpKey;
+import io.dingodb.expr.runtime.op.OpKeys;
 import io.dingodb.expr.runtime.op.OpType;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+//import java.sql.Types;
+import io.dingodb.expr.common.type.Types;
 
 @Operators
 abstract class DivOp extends BinaryNumericOp {
     private static final long serialVersionUID = 5716662239372671267L;
 
-    static @Nullable Integer div(int value0, int value1) {
-        return (value1 != 0) ? value0 / value1 : null;
+    static @Nullable Double div(int value0, int value1) {
+        return (value1 != 0) ? (double)value0 / value1 : null;
     }
 
-    static @Nullable Long div(long value0, long value1) {
-        return (value1 != 0L) ? value0 / value1 : null;
+    static @Nullable Double div(long value0, long value1) {
+        return (value1 != 0L) ? (double)value0 / value1 : null;
     }
 
     static @Nullable Float div(float value0, float value1) {
@@ -47,6 +53,16 @@ abstract class DivOp extends BinaryNumericOp {
 
     static @Nullable BigDecimal div(@NonNull BigDecimal value0, @NonNull BigDecimal value1) {
         return (value1.compareTo(BigDecimal.ZERO) != 0) ? value0.divide(value1, RoundingMode.HALF_UP) : null;
+    }
+
+    @Override
+    public @Nullable OpKey keyOf(@NonNull Type type0, @NonNull Type type1) {
+        OpKey opKey = super.keyOf(type0, type1);
+        if((type0.equals(Types.INT) || type0.equals(Types.LONG)) &&
+           (type1.equals(Types.INT) || type1.equals(Types.LONG))){
+            return Types.DOUBLE;
+        }
+        return opKey;
     }
 
     @Override
