@@ -69,7 +69,7 @@ abstract class DecimalCastOp extends CastOp {
                 }
                 String v = value.substring(0, lastNumberPos + 1);
                 try {
-                    result = new BigDecimal(value.trim());
+                    result = new BigDecimal(v);
                 } catch (NumberFormatException e1) {
                     result = new BigDecimal(0);
                 }

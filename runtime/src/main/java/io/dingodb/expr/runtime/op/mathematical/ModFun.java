@@ -37,6 +37,46 @@ abstract class ModFun extends BinaryNumericOp {
         return value1 != 0 ? value0 % value1 : null;
     }
 
+    static @Nullable float mod(float value0, float value1) {
+        boolean isNeg = (value0 < 0) ? true: false;
+        float result = isNeg ? -value0 : value0;
+        float val1 = (value1 < 0) ? -value1 : value1;
+
+        if (value1 == 0) {
+            return value0;
+        }
+
+        while(result > 0) {
+            if (result - val1 < 0) {
+                return isNeg ? -result : result;
+            } else {
+                result -= val1;
+            }
+        }
+
+        return 0;
+    }
+
+    static @Nullable double mod(double value0, double value1) {
+        boolean isNeg = (value0 < 0) ? true: false;
+        double result = isNeg ? -value0 : value0;
+        double val1 = (value1 < 0) ? -value1 : value1;
+
+        if (value1 == 0) {
+            return value0;
+        }
+
+        while(result > 0) {
+            if (result - val1 < 0) {
+                return isNeg ? -result : result;
+            } else {
+                result -= val1;
+            }
+        }
+
+        return 0;
+    }
+
     static @Nullable BigDecimal mod(@NonNull BigDecimal value0, @NonNull BigDecimal value1) {
         return value1.compareTo(BigDecimal.ZERO) != 0 ? value0.remainder(value1) : null;
     }
