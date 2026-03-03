@@ -18,16 +18,25 @@ package io.dingodb.expr.common.type;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+import java.util.Arrays;
+
+@Slf4j
 public final class DecimalType extends ScalarType {
     public static final String NAME = "DECIMAL";
 
     private static final int CODE = 6;
 
     @Getter
-    @Setter
+    //@Setter
     private long precision;
+
+    public void setPrecision(long precision) {
+        log.info("DecimalType precision in expr DecimalType: " + precision);
+        this.precision = precision;
+    }
 
     @Getter
     @Setter
